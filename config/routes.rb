@@ -1,4 +1,8 @@
 Freefood::Application.routes.draw do
+  get "static_pages/waiver"
+
+  get "static_pages/about"
+
   resources :foods
 
   resources :users

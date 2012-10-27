@@ -1,18 +1,25 @@
 <h1>Free Food!</h1>
-
+<br>
 <table>
 
 <% @foods.each do |food| %>
   <tr>
 
-    <td><%= image_tag(food.photo,size:"20x20" )%></td>
-    <td><b><%= food.title %></b></td>
-    <td><%= food.desc %></td>
-    <td><%= food.category %></td>
-    <td><%= food.location %></td>
-    <td><%= link_to 'Show', food %></td>
-    <td><%= link_to 'Edit', edit_food_path(food) %></td>
-    <td><%= link_to 'Remove', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= image_tag(food.photo,size:"100x100" )%></td>
+    <td>
+    <td><ul><li><b><%= food.title %></b>
+        <% if food.category == 2 %>
+          <span class="label label-success">Vegetarian
+        <% else %>
+          <span class="label label-important">Non-vegetarian
+        <% end %></span>
+      </li>
+      <li><%= food.desc %></li>
+      <li><!-- food.location --></li>
+      <li><%= link_to 'Show me!', food %> | 
+      <%= link_to 'Edit', edit_food_path(food) %> | 
+      <%= link_to 'Food\'s gone', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </td></li></ul>
   </tr>
 <% end %>
 </table>
