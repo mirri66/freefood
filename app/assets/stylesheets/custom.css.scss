@@ -18,6 +18,11 @@ textarea {
   resize: vertical;
 }
 
+#title{
+  font-weight: bold;
+  font-size: 2em;
+}
+
 .center {
   text-align: center;
 }
@@ -26,13 +31,15 @@ textarea {
   margin-bottom: 10px;
 }
 
+.navbar-inner{
+  background-color: #FF0000;
+}
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
