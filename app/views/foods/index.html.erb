@@ -9,7 +9,7 @@
 <% @foods.each do |food| %>
   <tr>
 
-    <td><%= safe_image_tag(food.photo,size:"100x100" )%></td>
+    <td><%= image_tag(food.photo,size:"100x100" )%></td>
     <td>
     <td><ul><li><b><%= food.title %></b>
         <% if food.category == 2 %>
