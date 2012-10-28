@@ -7,7 +7,7 @@
 
 
 
-<% @foods.each do |food| %>
+<% @foods.reverse.each do |food| %>
   <tr>
 
     <td><img src=" http://stanford.edu/group/spacegrav/cgi-bin/form/uploads/<%= food.id %>.jpg" width="100",height="100"></td>
@@ -23,6 +23,7 @@
         <% end %></span>
       </li>
       <li><%= food.desc %></li>
+      <li><p id="timestamp">Left out <%= time_ago_in_words(food.created_at) %> ago</p></li>
       <li><!-- food.location --></li>
       <li><%= link_to 'Show me!', food %> | 
       <%= link_to 'Edit', edit_food_path(food) %> | 
