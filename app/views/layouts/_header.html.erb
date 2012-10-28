@@ -2,7 +2,9 @@
   <div class="navbar-inner navbar-red">
    <div class="container">
    <nav>
-     <ul class="nav"><p id="logo"><%= link_to "Free Food!", root_path %></p>
+     <ul class="nav">
+       <li><%= image_tag("logo.png", size:"31x31") %>&nbsp;&nbsp;</li>
+       <p id="logo"><%= link_to "Free Food!", root_path %></p>
        <% if signed_in? %>
         <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
        <% else %>

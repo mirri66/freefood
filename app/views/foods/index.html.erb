@@ -10,7 +10,7 @@
 <% @foods.reverse.each do |food| %>
   <tr>
 
-    <td><img src=" http://stanford.edu/group/spacegrav/cgi-bin/form/uploads/<%= food.id %>.jpg" width="100",height="100"></td>
+    <td><img src=" http://stanford.edu/group/spacegrav/cgi-bin/form/uploads/<%= food.id %>.jpg" width="100",height="100" onError="this.src = 'http://stanford.edu/group/spacegrav/cgi-bin/form/uploads/default.png'"></td>
     <td>
     <td><ul><li><b><%= food.title %></b>
         <% if food.category == 1 %>
