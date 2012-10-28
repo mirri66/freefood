@@ -11,8 +11,15 @@
 </form>
 
 
-
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  
+<script>
+// select the file input (using a id would be faster)
+$('#photo').change(function() { 
+    // select the form and submit
+    $('form').submit(); 
+});
+</script>
 
 <h1>
   <%= @food.title %>
