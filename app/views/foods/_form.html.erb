@@ -1,4 +1,3 @@
-
 <%= form_for(@food) do |f| %>
   <% if @food.errors.any? %>
     <div id="error_explanation">
@@ -20,10 +19,11 @@
     <label>Tell the world about your food:</label>
     <%= f.text_field :desc %>
   </div>
-  <div class="field">
-    <label>pic:</label>
-    <%= f.text_field :photo %>
-  </div>
+
+
+
+    <%= f.hidden_field :photo, value: :id %>
+
 
 
   <div class="field">

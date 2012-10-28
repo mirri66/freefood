@@ -14,6 +14,10 @@ Freefood::Application.routes.draw do
   match '/faq', to: 'static_pages#faq'
   match '/waiver', to: 'static_pages#waiver'
 
+  match '/signup', to: 'users#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signin', to: 'sessions#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
