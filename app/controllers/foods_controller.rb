@@ -36,7 +36,7 @@ end
   # GET /foods/new.json
   def new
     @food = Food.new
-    @categories = ['dessert', 'non-veg', 'veg']
+    @categories = Category.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @food }
@@ -46,6 +46,7 @@ end
   # GET /foods/1/edit
   def edit
     @food = Food.find(params[:id])
+    @categories = Category.all
   end
 
   # POST /foods
