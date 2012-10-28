@@ -1,4 +1,8 @@
 class FoodsController < ApplicationController
+  def map
+    @foods = Food.all
+  end
+
   # GET /foods
   # GET /foods.json
   def index
