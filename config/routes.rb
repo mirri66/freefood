@@ -9,6 +9,7 @@ Freefood::Application.routes.draw do
 
   root to: 'foods#index'
 
+  match '/map', to: 'static_pages#map'
   match '/waiver', to: 'static_pages#waiver'
 
   # The priority is based upon order of creation:
