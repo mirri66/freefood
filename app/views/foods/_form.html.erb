@@ -28,7 +28,8 @@
 
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.number_field :category %>
+    <%= f.select :category, ['veg','nonveg'] %>
+    <%# f.number_field :category %>
   </div>
   <div class="field">
     <%= f.label :latitude %><br />
