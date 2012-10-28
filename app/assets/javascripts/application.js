@@ -12,9 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require_tree .
-<<<<<<< HEAD
 //= require mobileapp
-=======
-//= require mobileapp
->>>>>>> ccc56f9f6726af43fb1fccd8bc58c659ea22a0bf
