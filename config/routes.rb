@@ -1,6 +1,7 @@
 Freefood::Application.routes.draw do
   get "static_pages/map"
   get "static_pages/waiver"
+  get "static_pages/faq"
   get "static_pages/about"
 
   resources :foods
@@ -10,6 +11,7 @@ Freefood::Application.routes.draw do
   root to: 'foods#index'
 
   match '/map', to: 'static_pages#map'
+  match '/faq', to: 'static_pages#faq'
   match '/waiver', to: 'static_pages#waiver'
 
   # The priority is based upon order of creation:

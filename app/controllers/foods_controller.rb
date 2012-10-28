@@ -25,6 +25,13 @@ class FoodsController < ApplicationController
     end
   end
 
+def upload
+  file_field = @params['form']['file'] rescue nil
+  # file_field is a StringIO object
+  file_field.content_type # 'text/csv'
+  file_field.full_original_filename
+end
+
   # GET /foods/new
   # GET /foods/new.json
   def new
@@ -64,7 +71,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.update_attributes(params[:food])
-        format.html { redirect_to @food, notice: 'Food was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Food was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
