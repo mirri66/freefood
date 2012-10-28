@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :category %><br />
-    <%# f.select("food", "category", :id, :name ) %>
+    <%= select(:food, :category, @categories.collect {|cat| [ cat.name, cat.id ] }) %>
     <%# f.select :category, @categories %>
     <%# f.number_field :category %>
   </div>

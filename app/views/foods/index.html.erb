@@ -13,12 +13,13 @@
     <td><img src=" http://stanford.edu/group/spacegrav/cgi-bin/form/uploads/<%= food.id %>.jpg" width="100",height="100"></td>
     <td>
     <td><ul><li><b><%= food.title %></b>
-        <% if food.category == 0 %>
+        <% if food.category == 1 %>
           <span class="label label-warning">Dessert
-        <% elsif food.category == 1 %>
+        <% elsif food.category == 2 %>
           <span class="label label-important">Non-veg
-        <% else %>
+        <% elsif food.category == 3 %>
           <span class="label label-success">Vegetarian
+        <% else %>
         <% end %></span>
       </li>
       <li><%= food.desc %></li>
