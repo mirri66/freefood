@@ -3,8 +3,8 @@
    <div class="container">
    <nav>
      <ul class="nav">
-       <li><%= image_tag("logo.png", size:"31x31") %>&nbsp;&nbsp;</li>
-       <p id="logo"><%= link_to "Free Food!", root_path %></p>
+       <li><%= image_tag("logo.png", size:"40x40") %>&nbsp;&nbsp;</li>
+<li>       <p id="logo"><%= link_to "Free Food!", root_path %></p></li>
        <% if signed_in? %>
         <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
        <% else %>
