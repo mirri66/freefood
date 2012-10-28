@@ -1,18 +1,15 @@
 <div>
-<p id="notice"><%= notice %></p>
-
 
 <form enctype="multipart/form-data" method="post" action="http://stanford.edu/group/spacegrav/cgi-bin/form/file_upload_script.php">
 
 <input id=photoid name=photoid required type="hidden" value="<%= @food.id %>" />
 
-<label for=photo>Take a picture:</label>
+<p><label for=photo>Take a photo of your food!</label></p>
 <input id=photo name=photo type=file accept="image/*" required >
-
-
-
-<input type="submit" value="Upload It" />
+<br>
+<input type="submit" value="Add photo" />
 </form>
+<span class="img-rounded"><%= link_to "Skip", root_path %></span>
 
 
 
