@@ -1,3 +1,67 @@
 <div class="container">
   <span class="btn"><%= link_to "List", root_path %></span>
 </div>
+
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW4kC4ZyVKhpFOeqrhiW9wo1astvXpmLY&sensor=true">
+</script>
+
+<ol id=foodlist style="display:none;">
+<% @foods.each do |food| %>
+	<li lat="<%= food.latitude %>" lon="<%= food.location %>" title="<%= food.title %>" desc=<%= food.desc %> category="<%= food.category %>" photo="<%= food.photo %>"></li>
+<% end %>
+</ol>
+
+<div id="geo-wrapper"></div>
+<span id="live-geolocation"></span>	
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+<%= javascript_include_tag "geo" %>
+<script>
+var map;
+function lookup_location() {
+  geo_position_js.getCurrentPosition(set_lon_lat, show_map_error);
+}
+
+function show_map(loc) {
+  $("#geo-wrapper").css({'width':window.innerWidth*0.98,'height':'500px'});
+  map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 16, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
+  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
+  map.setCenter(center);
+  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here"});
+  add_all();
+}
+
+function add_marker(lat,lon,title1,desc,category,photo) {
+  var center = new google.maps.LatLng(lat,lon);
+  var icon = new google.maps.MarkerImage(photo, null, null, null, new google.maps.Size(32, 32));
+  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: title1, icon: icon});
+  
+}
+
+function add_all() {
+	$('#foodlist li').each(function(){
+	  add_marker($(this).attr('lat'),$(this).attr('lon'),$(this).attr('title'),$(this).attr('desc'),$(this).attr('category'),$(this).attr('photo'));
+	});
+}
+
+function set_lon_lat(loc) {
+  $("#lon").val(loc.coords.longitude);
+  $("#lat").val(loc.coords.latitude);
+  show_map(loc);
+}
+
+function show_map_error() {
+  $("#live-geolocation").html('Unable to determine your location.');
+}
+
+$(function() {
+  if (geo_position_js.init()) {
+    lookup_location();
+	
+  } else {
+    $("#lon").val(0);
+	$("#lat").val(0);
+  }
+});
+</script>
