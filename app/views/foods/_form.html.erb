@@ -23,6 +23,14 @@
     <%= f.label :category %><br />
     <%= f.select :category, ['veg', 'nonveg'] %>
   </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
   <div class="actions">
     <%= f.submit "Post your food!" %>
   </div>
