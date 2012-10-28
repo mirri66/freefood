@@ -1,14 +1,15 @@
 Freefood::Application.routes.draw do
+  get "static_pages/map"
   get "static_pages/waiver"
-
   get "static_pages/about"
 
   resources :foods
-
+  resources :sessions
   resources :users
 
   root to: 'foods#index'
 
+  match '/waiver', to: 'static_pages#waiver'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

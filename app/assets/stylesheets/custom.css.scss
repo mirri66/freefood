@@ -1,5 +1,16 @@
 @import "bootstrap";
 
+/* responsive */
+@media screen and (min-width: 480px) {
+body {
+  width: auto;
+  font-size: 1em;
+  }
+
+
+}
+
+
 /* universal */
 
 html {
@@ -33,6 +44,13 @@ textarea {
 
 .navbar-inner{
   background-color: #FF0000;
+}
+
+.container{
+  width: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 #logo {

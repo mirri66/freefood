@@ -44,7 +44,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        format.html { redirect_to @food, notice: 'Food was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Food was successfully created.' }
         format.json { render json: @food, status: :created, location: @food }
       else
         format.html { render action: "new" }
