@@ -35,3 +35,35 @@
     <%= f.submit "Post your food!" %>
   </div>
 <% end %>
+
+<span id="live-geolocation"></span>	
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+<script src="http://stanford.edu/~zoellner/freefood/geo.js"></script>
+<script>
+
+function lookup_location() {
+  geo_position_js.getCurrentPosition(set_lon_lat, show_map_error);
+}
+
+
+function set_lon_lat(loc) {
+  $("#food_location").val(loc.coords.longitude);
+  $("#food_latitude").val(loc.coords.latitude);
+}
+
+function show_map_error() {
+  $("#live-geolocation").html('Unable to determine your location.');
+}
+
+$(function() {
+  if (geo_position_js.init()) {
+    lookup_location();
+	
+  } else {
+    $("#food_location").val(0);
+	$("#food_latitude").val(0);
+  }
+});
+</script>
