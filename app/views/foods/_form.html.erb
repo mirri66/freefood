@@ -32,11 +32,11 @@
     <%# f.select :category, @categories %>
     <%# f.number_field :category %>
   </div>
-  <div class="field">
+  <div class="field" id="latdiv" style="display:none;">
     <%= f.label :latitude %><br />
     <%= f.text_field :latitude %>
   </div>
-  <div class="field">
+  <div class="field" id="londiv" style="display:none;">
     <%= f.label :location %><br />
     <%= f.text_field :location %>
   </div>
@@ -73,6 +73,8 @@ $(function() {
   } else {
     $("#food_location").val(0);
 	$("#food_latitude").val(0);
+	$("#latdiv").show();
+	$("#londiv").show();
   }
 });
 </script>
