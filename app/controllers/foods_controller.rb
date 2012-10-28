@@ -36,7 +36,7 @@ end
   # GET /foods/new.json
   def new
     @food = Food.new
-
+    @categories = ['dessert', 'non-veg', 'veg']
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @food }

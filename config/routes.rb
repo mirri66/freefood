@@ -1,4 +1,6 @@
 Freefood::Application.routes.draw do
+  resources :categories
+
   get "static_pages/map"
   get "static_pages/waiver"
   get "static_pages/faq"

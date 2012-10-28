@@ -5,6 +5,8 @@
 <br>
 <table>
 
+
+
 <% @foods.each do |food| %>
   <tr>
 
@@ -12,11 +14,11 @@
     <td>
     <td><ul><li><b><%= food.title %></b>
         <% if food.category == 0 %>
-          <span class="label label-success">Vegetarian
+          <span class="label label-warning">Dessert
         <% elsif food.category == 1 %>
           <span class="label label-important">Non-veg
         <% else %>
-          <span class="label label-warning">Dessert
+          <span class="label label-success">Vegetarian
         <% end %></span>
       </li>
       <li><%= food.desc %></li>
