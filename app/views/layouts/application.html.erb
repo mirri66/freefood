@@ -13,7 +13,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body onload="lookup_location()">
 <%= render 'layouts/header' %>
 <div id="content">  
   <%= yield %>
