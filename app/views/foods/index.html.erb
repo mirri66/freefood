@@ -25,8 +25,8 @@
       <li><%= food.desc %></li>
       <li><p id="timestamp">Left out <%= time_ago_in_words(food.created_at) %> ago</p></li>
       <li><!-- food.location --></li>
-      <li><%= link_to 'Show me!', food %> | 
-      <%= link_to 'Edit', edit_food_path(food) %> | 
+      <li><%# link_to 'Show me!', food %>
+      <%# link_to 'Edit', edit_food_path(food) %>
       <%= link_to 'Food\'s gone', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </td></li></ul>
   </tr>
