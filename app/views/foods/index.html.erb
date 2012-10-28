@@ -27,7 +27,7 @@
       <li><!-- food.location --></li>
       <li><%# link_to 'Show me!', food %>
       <%# link_to 'Edit', edit_food_path(food) %>
-      <%= link_to 'Food\'s gone', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <span><%= link_to 'Food\'s gone', food, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
     </td></li></ul>
   </tr>
 <% end %>
