@@ -27,7 +27,13 @@ function show_map(loc) {
   map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 16, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
   var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
-  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here"});
+   var pinColor = "007569";
+    var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0,0),
+        new google.maps.Point(10, 34));
+		
+  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here", icon: pinImage});
   add_all();
 }
 
